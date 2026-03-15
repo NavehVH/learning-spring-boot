@@ -8,21 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.ToString;
+import java.sql.Date;
 
 @Entity
-@Table(name="rooms")
+@Table(name="reservations")
 @Data
 @ToString
-public class Room {
-
+public class Reservation {
   @Id
-  @Column(name="room_id")
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name="reservation_id")
   private long id;
-  @Column(name="name")
-  private String name;
-  @Column(name="room_number")
-  private String roomNumber;
-  @Column(name="bed_info")
-  private String bedInfo;
+  @Column(name="room_id")
+  private long roomId;
+  @Column(name="guest_id")
+  private long guestId;
+  @Column(name="res_date")
+  private Date reservationDate;
 }
